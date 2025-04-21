@@ -30,7 +30,7 @@ int main() {
 
         // Validate input to ensure it's either 'y' or 'n'
         while (moreValues != 'y' && moreValues != 'n' && moreValues != 'Y' && moreValues != 'N') {
-            cout << "Invalid input. Please enter 'y' for yes or 'n' for no: ";
+            cout << "Invalid input. Please enter 'y' or 'Y' for yes and  'n' or 'N' for no: ";
             cin >> moreValues;
         }
     } while (moreValues == 'y' || moreValues == 'Y');
@@ -38,6 +38,8 @@ int main() {
     // Calculate and display percentage of high salaries
     if (totalSalaries > 0) {
         double percentage = (static_cast<double>(highSalaries) / totalSalaries) * 100;
+        cout.setf(ios::fixed);
+        cout.precision(2);
         cout << "Percentage of salaries exceeding R100,000: " << percentage << "%" << endl;
     } else {
         cout << "No salaries were entered." << endl;
